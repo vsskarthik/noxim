@@ -36,7 +36,7 @@ n_virtual_channels: 1
 #   TABLE_BASED
 # Each of the above labels should match a corresponding
 # implementation in the routingAlgorithms source code directory
-routing_algorithm: XY
+routing_algorithm: F
 routing_table_filename: ""
 
 # Routing specific parameters
@@ -123,7 +123,7 @@ simulation_time: 10000
 # collect stats after a given number of cycles
 stats_warm_up_time: 1000
 # power breakdown, nodes communication details
-detailed: true
+detailed: false
 # stop after a given amount of load has been processed
 max_volume_to_be_drained: 0
 show_buffer_stats: false

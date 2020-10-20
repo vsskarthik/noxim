@@ -27,11 +27,11 @@ Energy:
         - [64, 128, 1.14e-1 , 1.92e-11, 0, 1.71e-11 ]     # interpolated
 
 
-    # LinkBitLine energy in the form [ Length (mm) Leakage Dynamic ] 
-    # Energy(J) for a single bitline. Total flit energy will 
+    # LinkBitLine energy in the form [ Length (mm) Leakage Dynamic ]
+    # Energy(J) for a single bitline. Total flit energy will
     # be obtained  as flit_size x reported Energy.
     LinkBitLine:
-    #   - [ Length (mm), Leakage, Dynamic ] 
+    #   - [ Length (mm), Leakage, Dynamic ]
         - [0.5, 4.76e-7, 2.50e-14]
         - [1.0, 4.80e-7, 4.88e-14]
         - [1.5, 4.92e-7, 7.25e-14]
@@ -62,6 +62,8 @@ Energy:
         routing:
         #   Algorithm:   [Static, Dynamic]
             default:     [1.20e-4, 6.00e-14]
+            F:          [1.20e-4, 6.00e-14]
+            CXY:          [1.20e-4, 6.00e-14]
             XY:          [1.20e-4, 6.00e-14]
             DYAD:        [1.35e-4, 6.75e-14]
             NEGATIVE_FIRST: [1.28e-4, 6.30e-14]
