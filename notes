@@ -1,0 +1,2 @@
+1. If we are dealing with the routing algorithms like d2-LBDR. Then the Fault injection cannot be random as we dont have a centralized system
+    for fault reporting. Hence we need to develop a relation between the router fixed atributes(Eg. Coordinates) and the faults.
