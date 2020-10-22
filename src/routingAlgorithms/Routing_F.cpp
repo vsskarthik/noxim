@@ -20,7 +20,7 @@ vector<int> Routing_F::route(Router * router, const RouteData & routeData)
     Coord destination = id2Coord(routeData.dst_id);
 
 		//Fault Injection
-		int BlockedDirection = injectFault(); // No Fault = NULL
+		vector<int> BlockedDirection = injectFault(true); // args: verbose(bool) return: vector<int> of Blocker Directions(may be 0,1,2)
 
     // Routing
     vector <int> directions;

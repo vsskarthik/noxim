@@ -5,7 +5,7 @@
 #include "RoutingAlgorithms.h"
 #include "../Router.h"
 #include "../Fault.h"
- 
+
 using namespace std;
 
 class Routing_F : RoutingAlgorithm {
@@ -20,6 +20,7 @@ class Routing_F : RoutingAlgorithm {
 		static RoutingAlgorithmsRegister routingAlgorithmsRegister;
 		static RoutingAlgorithm * odd_even;
 		static RoutingAlgorithm * xy;
+
 
 };
 

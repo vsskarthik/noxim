@@ -10,7 +10,7 @@
  */
 
 #ifndef __NOXIMGLOBALPARAMS_H__
-#define __NOXIMGLOBALPARAMS_H__ 
+#define __NOXIMGLOBALPARAMS_H__
 
 #include <map>
 #include <utility>
@@ -59,7 +59,7 @@ using namespace std;
 #define ROUTING_TABLE_BASED    "TABLE_BASED"
 
 
-// Channel selection 
+// Channel selection
 #define CHSEL_RANDOM 0
 #define CHSEL_FIRST_FREE 1
 
