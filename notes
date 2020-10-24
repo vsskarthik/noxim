@@ -1,2 +1,9 @@
-1. If we are dealing with the routing algorithms like d2-LBDR. Then the Fault injection cannot be random as we dont have a centralized system
-    for fault reporting. Hence we need to develop a relation between the router fixed atributes(Eg. Coordinates) and the faults.
+
+
+2. To store any global variable(through out the project) define it under GlobalParams struct in GlobalParams.h and GlobalParams.cpp also.
+
+3. This is intresting because we can store(for every cycle) the faults.
+   - So we precompute the faults before each cycle(refer docs to do this, "something related to main function") and store it in GlobalParams.
+   - This way we can have a Passive fault monitor as required by the d2-LBDR.
+
+4. Use the ConfigManager.cpp to read the values from config file and store it in globalParams
