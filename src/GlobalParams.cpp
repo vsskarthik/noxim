@@ -57,7 +57,9 @@ HubConfig GlobalParams::default_hub_configuration;
 map<int, HubConfig> GlobalParams::hub_configuration;
 map<int, int> GlobalParams::hub_for_tile;
 PowerConfig GlobalParams::power_configuration;
+// Fault Params
 bool GlobalParams::inject_fault;
+vector<vector<Fault>> GlobalParams::FaultMatrix;
 // out of yaml configuration
 bool GlobalParams::ascii_monitor;
 int GlobalParams::channel_selection;

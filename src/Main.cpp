@@ -52,9 +52,45 @@ int sc_main(int arg_num, char *arg_vet[])
 
 
     configure(arg_num, arg_vet);
+    // ----------- Fault Section --------------------
 
-    // Fault Injection
-		cout << "Fault Injection: " << GlobalParams::inject_fault << endl;
+    // Fault Injection Check
+		cout << "Fault Injection: ";
+    (GlobalParams::inject_fault)?(cout << "Enabled"): (cout << "Disabled");
+    cout << "\n"<< endl;
+
+    // Fault Matix
+    cout << "Fault Matrix: " << endl;
+    if(GlobalParams::inject_fault){
+      srand(time(0));
+      vector<vector<Fault>> temp_matrix;
+
+      for (int i = 0; i < GlobalParams::mesh_dim_x; i++) {
+          vector<Fault> temp_fault_row;
+          for (int j = 0; j < GlobalParams::mesh_dim_y; j++) {
+              auto temp_fault = Fault();
+              temp_fault.injectFault(rand()%3); //Generate Random Number of Directions range:0 to 3
+              temp_fault_row.push_back(temp_fault);
+          }
+          GlobalParams::FaultMatrix.push_back(temp_fault_row);
+        }
+
+      // Display Fault Matrix
+      if(1){
+        for (int i = 0; i < GlobalParams::mesh_dim_x; i++) {
+            for (int j = 0; j < GlobalParams::mesh_dim_y; j++) {
+                GlobalParams::FaultMatrix[i][j].print();
+                cout << " ";
+              }
+              cout << endl;
+            }
+          }
+        }
+    cout << "\n";
+
+    // ----- End Fault Section --------
+
+
 
     // Signals
     sc_clock clock("clock", GlobalParams::clock_period_ps, SC_PS);

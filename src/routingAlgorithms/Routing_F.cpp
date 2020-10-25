@@ -18,10 +18,7 @@ vector<int> Routing_F::route(Router * router, const RouteData & routeData)
 {
     Coord current = id2Coord(routeData.current_id);
     Coord destination = id2Coord(routeData.dst_id);
-
-		//Fault Injection
-		//vector<int> BlockedDirection = injectFault(false); // args: verbose(bool) return: vector<int> of Blocker Directions(may be 0,1,2)
-
+		
     // Routing
     vector <int> directions;
 	  if(router -> inCongestion()){ // If congested use OE

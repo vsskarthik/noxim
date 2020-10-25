@@ -16,6 +16,7 @@
 #include <utility>
 #include <vector>
 #include <string>
+#include "Fault.h"
 
 using namespace std;
 
@@ -182,10 +183,13 @@ struct GlobalParams {
     static map<int, HubConfig> hub_configuration;
     static map<int, int> hub_for_tile;
     static PowerConfig power_configuration;
+    //Fault Params
     static bool inject_fault;
+    static vector<vector<Fault>> FaultMatrix;
     // out of yaml configuration
     static bool ascii_monitor;
     static int channel_selection;
+
 };
 
 #endif
