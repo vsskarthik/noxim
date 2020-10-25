@@ -20,6 +20,11 @@ To receive information about new Noxim features, updates and events, please regi
 
 What's New ? 
 ------------
+
+**[October 2020]**
+
+  * Support for fault injection added (with the help of fault matrix)
+
 **[March 2018]**
 
   * Support for virtual channels for improved traffic management
@@ -47,7 +52,12 @@ If you are working on Ubuntu, you can install noxim and all the dependencies wit
 
 Or, to get just the latest master sources, you can run:
 
+    git clone https://github.com/vsskarthik/noxim.git
+
+This is fork of:
+
     git clone https://github.com/davidepatti/noxim.git
+
 
 Noxim has a command line interface for defining several parameters of a NoC. In particular the
 user can customize the network size, buffer size, packet size distribution, routing algorithm,
