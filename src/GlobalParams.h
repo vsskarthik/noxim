@@ -182,7 +182,7 @@ struct GlobalParams {
     static map<int, HubConfig> hub_configuration;
     static map<int, int> hub_for_tile;
     static PowerConfig power_configuration;
-    static int test;
+    static bool inject_fault;
     // out of yaml configuration
     static bool ascii_monitor;
     static int channel_selection;

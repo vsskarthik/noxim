@@ -127,6 +127,8 @@ detailed: false
 # stop after a given amount of load has been processed
 max_volume_to_be_drained: 0
 show_buffer_stats: false
+#Fault Injection
+inject_fault: true
 
 # Winoc
 # enable wireless, when false, all wireless channel configuration is
