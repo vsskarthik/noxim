@@ -32,6 +32,39 @@ void signalHandler( int signum )
     gs.showStats(std::cout, GlobalParams::detailed);
 }
 
+void InjectFault(bool verbose){
+    // Fault Matix
+
+    if(GlobalParams::inject_fault){
+      cout << "Fault Matrix: " << endl;
+      srand(time(0));
+      vector<vector<Fault>> temp_matrix;
+
+      for (int i = 0; i < GlobalParams::mesh_dim_x; i++) {
+          vector<Fault> temp_fault_row;
+          for (int j = 0; j < GlobalParams::mesh_dim_y; j++) {
+              auto temp_fault = Fault();
+              temp_fault.injectFault(rand()%3); //Generate Random Number of Directions range:0 to 3
+              temp_fault_row.push_back(temp_fault);
+          }
+          GlobalParams::FaultMatrix.push_back(temp_fault_row);
+        }
+
+      // Display Fault Matrix
+      if(verbose){
+        for (int i = 0; i < GlobalParams::mesh_dim_x; i++) {
+            for (int j = 0; j < GlobalParams::mesh_dim_y; j++) {
+                GlobalParams::FaultMatrix[i][j].print();
+                cout << " ";
+              }
+              cout << endl;
+            }
+          }
+        }
+    cout << "\n";
+
+}
+
 int sc_main(int arg_num, char *arg_vet[])
 {
     signal(SIGQUIT, signalHandler);
@@ -58,36 +91,7 @@ int sc_main(int arg_num, char *arg_vet[])
 		cout << "Fault Injection: ";
     (GlobalParams::inject_fault)?(cout << "Enabled"): (cout << "Disabled");
     cout << "\n"<< endl;
-
-    // Fault Matix
-
-    if(GlobalParams::inject_fault){
-      cout << "Fault Matrix: " << endl;
-      srand(time(0));
-      vector<vector<Fault>> temp_matrix;
-
-      for (int i = 0; i < GlobalParams::mesh_dim_x; i++) {
-          vector<Fault> temp_fault_row;
-          for (int j = 0; j < GlobalParams::mesh_dim_y; j++) {
-              auto temp_fault = Fault();
-              temp_fault.injectFault(rand()%3); //Generate Random Number of Directions range:0 to 3
-              temp_fault_row.push_back(temp_fault);
-          }
-          GlobalParams::FaultMatrix.push_back(temp_fault_row);
-        }
-
-      // Display Fault Matrix
-      if(1){
-        for (int i = 0; i < GlobalParams::mesh_dim_x; i++) {
-            for (int j = 0; j < GlobalParams::mesh_dim_y; j++) {
-                GlobalParams::FaultMatrix[i][j].print();
-                cout << " ";
-              }
-              cout << endl;
-            }
-          }
-        }
-    cout << "\n";
+    InjectFault(true);
 
     // ----- End Fault Section --------
 
