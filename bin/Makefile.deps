@@ -6,6 +6,7 @@
 ./build/Channel.o: ../src/GlobalParams.h ../src/Power.h ../src/Hub.h
 ./build/Channel.o: ../src/Buffer.h ../src/ReservationTable.h
 ./build/Channel.o: ../src/Initiator.h ../src/Target.h ../src/TokenRing.h
+./build/Channel.o: ../src/Fault.h
 ./build/ConfigurationManager.o: ../src/ConfigurationManager.h
 ./build/ConfigurationManager.o: ../src/GlobalParams.h
 ./build/GlobalParams.o: ../src/GlobalParams.h

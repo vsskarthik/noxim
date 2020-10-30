@@ -15,9 +15,7 @@ private:
 
 public:
 
-  Fault(){
-    //injectFault();
-  }
+  Fault(){}
   void injectFault(int num_of_dirs);
   ~Fault(){
     faults={};

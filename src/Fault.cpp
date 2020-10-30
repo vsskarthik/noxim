@@ -1,9 +1,12 @@
 #include "Fault.h"
 
-
+#define DIRECTION_NORTH         0
+#define DIRECTION_EAST          1
+#define DIRECTION_SOUTH         2
+#define DIRECTION_WEST          3
 
 void Fault::injectFault(int num_of_dirs){
-    int availableDirections[4] = {0,1,2,3};
+    int availableDirections[4] = {DIRECTION_NORTH,DIRECTION_EAST,DIRECTION_SOUTH,DIRECTION_WEST};
     //int num_of_dirs = rand()%3+1;
 
 
@@ -22,20 +25,6 @@ void Fault::injectFault(int num_of_dirs){
         faults.push_back(availableDirections[rand2]);
 
     }
-    /*
-    if(verbose){
-        string referenceDirections[4] = {"NORTH","EAST","SOUTH","WEST"};
-
-        if(faults.size()){
-            cout << "Fault Found in Directions: ";
-            for(int i:faults)
-                cout << referenceDirections[i] << ", ";
-            cout << endl;
-        }
-        else
-            cout << "No Fault" << endl;
-    }
-    */
 }
 
 void Fault::print(){

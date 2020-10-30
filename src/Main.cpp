@@ -60,8 +60,9 @@ int sc_main(int arg_num, char *arg_vet[])
     cout << "\n"<< endl;
 
     // Fault Matix
-    cout << "Fault Matrix: " << endl;
+
     if(GlobalParams::inject_fault){
+      cout << "Fault Matrix: " << endl;
       srand(time(0));
       vector<vector<Fault>> temp_matrix;
 
