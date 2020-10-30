@@ -1,22 +1,20 @@
-#include "Selection_RANDOM.h"
+#include "Selection_FA.h"
 
-SelectionStrategiesRegister Selection_RANDOM::selectionStrategiesRegister("RANDOM", getInstance());
+SelectionStrategiesRegister Selection_FA::selectionStrategiesRegister("FA", getInstance());
 
-Selection_RANDOM * Selection_RANDOM::selection_RANDOM = 0;
+Selection_FA * Selection_FA::selection_FA = 0;
 
-Selection_RANDOM * Selection_RANDOM::getInstance() {
-	if ( selection_RANDOM == 0 )
-		selection_RANDOM = new Selection_RANDOM();
-    
-	return selection_RANDOM;
+Selection_FA * Selection_FA::getInstance() {
+	if ( selection_FA == 0 )
+		selection_FA = new Selection_FA();
+
+	return selection_FA;
 }
 
-int Selection_RANDOM::apply(Router * router, const vector < int >&directions, const RouteData & route_data){
+int Selection_FA::apply(Router * router, const vector < int >&directions, const RouteData & route_data){
     assert(directions.size()!=0);
-
-    int output = directions[rand() % directions.size()];
-    return output;
+		
 
 }
 
-void Selection_RANDOM::perCycleUpdate(Router * router){ }
+void Selection_FA::perCycleUpdate(Router * router){ }

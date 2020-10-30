@@ -7,7 +7,7 @@ Routing_ODD_EVEN * Routing_ODD_EVEN::routing_ODD_EVEN = 0;
 Routing_ODD_EVEN * Routing_ODD_EVEN::getInstance() {
 	if ( routing_ODD_EVEN == 0 )
 		routing_ODD_EVEN = new Routing_ODD_EVEN();
-    
+
 	return routing_ODD_EVEN;
 }
 
@@ -26,7 +26,7 @@ vector<int> Routing_ODD_EVEN::route(Router * router, const RouteData & routeData
     int e0, e1;
 
     e0 = d0 - c0;
-    e1 = -(d1 - c1);
+    e1 = (d1 - c1);
 
     if (e0 == 0) {
         if (e1 > 0)
@@ -60,5 +60,11 @@ vector<int> Routing_ODD_EVEN::route(Router * router, const RouteData & routeData
 
     assert(directions.size() > 0 && directions.size() <= 2);
 
+		if(GlobalParams::packet_injection_rate > 0.3){
+			cout << "Use New Algo" << endl;
+		}
+		else{
+			cout << "Use Old Algo" << endl;
+		}
     return directions;
 }

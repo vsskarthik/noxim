@@ -85,6 +85,7 @@ int sc_main(int arg_num, char *arg_vet[])
 
 
     configure(arg_num, arg_vet);
+/*
     // ----------- Fault Section --------------------
 
     // Fault Injection Check
@@ -94,7 +95,7 @@ int sc_main(int arg_num, char *arg_vet[])
     InjectFault(true);
 
     // ----- End Fault Section --------
-
+*/
 
 
     // Signals
