@@ -62,7 +62,7 @@ Energy:
         routing:
         #   Algorithm:   [Static, Dynamic]
             default:     [1.20e-4, 6.00e-14]
-            F:          [1.20e-4, 6.00e-14]
+            FA:          [1.20e-4, 6.00e-14]
             CXY:          [1.20e-4, 6.00e-14]
             XY:          [1.20e-4, 6.00e-14]
             DYAD:        [1.35e-4, 6.75e-14]

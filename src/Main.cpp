@@ -96,7 +96,9 @@ int sc_main(int arg_num, char *arg_vet[])
 
     // ----- End Fault Section --------
 */
-
+    //print rounting and selection information
+    cout << "Routing Algorithm: "<< GlobalParams::routing_algorithm << endl;
+    cout << "Selection Algorithm: "<<GlobalParams::selection_strategy << endl;
 
     // Signals
     sc_clock clock("clock", GlobalParams::clock_period_ps, SC_PS);

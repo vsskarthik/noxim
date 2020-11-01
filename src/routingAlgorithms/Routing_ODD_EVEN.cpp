@@ -60,11 +60,5 @@ vector<int> Routing_ODD_EVEN::route(Router * router, const RouteData & routeData
 
     assert(directions.size() > 0 && directions.size() <= 2);
 
-		if(GlobalParams::packet_injection_rate > 0.3){
-			cout << "Use New Algo" << endl;
-		}
-		else{
-			cout << "Use Old Algo" << endl;
-		}
     return directions;
 }
