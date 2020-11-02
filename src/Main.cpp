@@ -78,7 +78,7 @@ int sc_main(int arg_num, char *arg_vet[])
     cout << "\t\t(C) University of Catania" << endl;
     cout << "\t--------------------------------------------" << endl;
 
-    cout << "Catania V., Mineo A., Monteleone S., Palesi M., and Patti D. (2016) Cycle-Accurate Network on Chip Simulation with Noxim. ACM Trans. Model. Comput. Simul. 27, 1, Article 4 (August 2016), 25 pages. DOI: https://doi.org/10.1145/2953878" << endl;
+//    cout << "Catania V., Mineo A., Monteleone S., Palesi M., and Patti D. (2016) Cycle-Accurate Network on Chip Simulation with Noxim. ACM Trans. Model. Comput. Simul. 27, 1, Article 4 (August 2016), 25 pages. DOI: https://doi.org/10.1145/2953878" << endl;
     cout << endl;
     cout << endl;
 
@@ -97,9 +97,12 @@ int sc_main(int arg_num, char *arg_vet[])
     // ----- End Fault Section --------
 */
     //print rounting and selection information
+    cout << "\n\n" << "Routing Information" << endl;
+    cout << "-----------------------" << endl;
     cout << "Routing Algorithm: "<< GlobalParams::routing_algorithm << endl;
     cout << "Selection Algorithm: "<<GlobalParams::selection_strategy << endl;
-
+    cout << "Traffic Type: "<<GlobalParams::traffic_distribution << endl;
+    cout << "\n\n";
     // Signals
     sc_clock clock("clock", GlobalParams::clock_period_ps, SC_PS);
     sc_signal <bool> reset;
